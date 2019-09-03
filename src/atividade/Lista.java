@@ -13,9 +13,23 @@ public class Lista {
 
     private int tamMax;
     private int indice;
-    private Pessoa lista;
+    private Pessoa[] lista;
 
-    void inserir(Pessoa pessoa) {
+    public Lista(int tamMax) {
+        this.tamMax = tamMax;
+        this.indice = 0;
+        lista = new Pessoa[tamMax];
+    }
+    
+
+    void inserir(Pessoa pessoa) {        
+         if (indice == tamMax){
+             System.out.println("Lista cheia");
+         }else{
+             lista[indice] = pessoa;
+             indice ++;
+             System.out.println("inserção realizada");
+         }
     }
 
     void inserir(int posicao, Pessoa pessoa) {
@@ -38,6 +52,7 @@ public class Lista {
     }
 
     void listarTodos() {
-
+       for (Pessoa pessoa : lista)
+            System.out.println(pessoa.toString());
     }
 }

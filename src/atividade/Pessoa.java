@@ -22,7 +22,7 @@ public class Pessoa {
     }
 
    
-    public void Pessoa() {
+    public Pessoa() {
     }
 
     @Override
